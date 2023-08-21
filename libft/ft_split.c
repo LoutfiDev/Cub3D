@@ -6,7 +6,7 @@
 /*   By: yloutfi <yloutfi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 14:54:54 by anaji             #+#    #+#             */
-/*   Updated: 2023/07/11 19:30:25 by yloutfi          ###   ########.fr       */
+/*   Updated: 2023/08/21 11:43:08 by yloutfi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static	int	w_len(const char *s, char c, int i)
 
 	len = 0;
 	while (s[i] && s[i] != c)
-	{	
+	{
 		len++;
 		i++;
 	}

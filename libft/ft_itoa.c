@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anaji <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: yloutfi <yloutfi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 10:12:25 by anaji             #+#    #+#             */
-/*   Updated: 2022/10/30 21:37:38 by anaji            ###   ########.fr       */
+/*   Updated: 2023/08/21 11:40:53 by yloutfi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
 static	int	get_int_len(long nb)
@@ -50,7 +51,7 @@ static	void	fill_form(char **s, long nb, int len)
 		(*s)[len - i - 1] = ft_abs((nb % 10)) + '0';
 		i++;
 		nb = nb / 10;
-	}	
+	}
 	if (n < 0)
 		(*s)[0] = '-';
 	(*s)[i] = '\0';

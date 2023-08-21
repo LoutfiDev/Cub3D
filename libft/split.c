@@ -6,11 +6,31 @@
 /*   By: yloutfi <yloutfi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/17 16:03:11 by yloutfi           #+#    #+#             */
-/*   Updated: 2023/07/11 16:26:04 by yloutfi          ###   ########.fr       */
+/*   Updated: 2023/08/19 12:35:48 by yloutfi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./libft.h"
+
+static int	ft_nbr_array(char *str, char c)
+{
+	int	i;
+	int	count;
+
+	i = 0;
+	count = 0;
+	if (str == 0)
+		return (0);
+	if (str[0] != c && str[0])
+		count++;
+	while (i < (int)ft_strlen(str))
+	{
+		if (str[i] == c && str[i + 1] != c && str[i + 1])
+			count++;
+		i++;
+	}
+	return (count);
+}
 
 static char	*ft_fill_array(char *str, char c, int *j)
 {
@@ -49,12 +69,9 @@ char	**split(char *s, char c)
 
 	i = 0;
 	j = 0;
+	if (!s || ft_nbr_array(s, ' ') != 2)
+		return (NULL);
 	big_array = ft_calloc(3, sizeof(char *));
-	if (!ft_strchr(s, '='))
-	{
-		big_array[0] = ft_strdup(s);
-		return (big_array);
-	}
 	while (i < 2)
 	{
 		if (i == 0)

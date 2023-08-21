@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anaji <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: yloutfi <yloutfi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 12:35:48 by anaji             #+#    #+#             */
-/*   Updated: 2023/06/03 08:21:00 by anaji            ###   ########.fr       */
+/*   Updated: 2023/08/21 11:41:42 by yloutfi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,8 @@ char	*next_line(int fd, char *buff, char **holder, int *index)
 	if (*index)
 	{
 		res = ft_cpy(buff, *index);
-		if (buff + (*index))
+		buff = buff + (*index);
+		if (buff)
 			*holder = ft_cpy(buff + (*index), ft_len(buff) - (*index));
 		return (res);
 	}

@@ -6,7 +6,7 @@
 /*   By: yloutfi <yloutfi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/13 18:19:40 by yloutfi           #+#    #+#             */
-/*   Updated: 2023/08/13 18:21:14 by yloutfi          ###   ########.fr       */
+/*   Updated: 2023/08/21 10:56:06 by yloutfi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,6 @@
 
 void	draw(t_data *data)
 {
-    return ;
+	(void)data;
+	return ;
 }

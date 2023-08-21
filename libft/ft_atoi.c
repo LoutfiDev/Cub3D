@@ -6,7 +6,7 @@
 /*   By: yloutfi <yloutfi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 19:51:45 by anaji             #+#    #+#             */
-/*   Updated: 2023/07/27 16:18:12 by yloutfi          ###   ########.fr       */
+/*   Updated: 2023/08/21 11:41:11 by yloutfi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ static	int	get_sign(const char *str, int *i)
 
 	sign = 1;
 	if (str[*i] == '-')
-	{	
+	{
 		sign = -1;
 		(*i)++;
 	}

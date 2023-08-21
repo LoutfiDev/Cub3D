@@ -76,12 +76,15 @@ char	*ft_strtrim(char *s1, char *set)
 	int		len;
 
 	if (!s1)
-		return (free(s1), s1);
+		return (NULL);
 	if (!set)
 		return (ft_strdup(s1));
 	start_txt = start_of_text(s1, set);
 	if (start_txt == ft_strlen(s1))
-		return (free(s1), ft_strdup(""));
+	{
+		free(s1);
+		return (ft_strdup(""));
+	}
 	end_txt = end_of_text(s1, set);
 	len = end_txt - start_txt + 1;
 	s = ft_substr(s1, start_txt, len);

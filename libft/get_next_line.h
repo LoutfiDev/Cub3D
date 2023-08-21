@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anaji <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: yloutfi <yloutfi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 21:27:49 by anaji             #+#    #+#             */
-/*   Updated: 2023/06/03 08:18:10 by anaji            ###   ########.fr       */
+/*   Updated: 2023/08/21 11:42:15 by yloutfi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#	ifndef GET_NEXT_LINE_H
+#ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
 
 # ifndef BUFFER_SIZE
@@ -33,4 +33,4 @@ char	*ft_cpy(char *src, int len);
 char	*next_line(int fd, char *buff, char **holder, int *index);
 char	*init(int *index, char *holder, char **res);
 
-#	endif
+#endif

@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstiter_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anaji <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: yloutfi <yloutfi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/23 23:45:37 by anaji             #+#    #+#             */
-/*   Updated: 2022/10/30 21:39:50 by anaji            ###   ########.fr       */
+/*   Updated: 2023/08/21 11:40:30 by yloutfi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
 void	ft_lstiter(t_list *lst, void (*f)(void *))
@@ -18,4 +19,4 @@ void	ft_lstiter(t_list *lst, void (*f)(void *))
 		f(lst -> content);
 		lst = lst -> next;
 	}
-}	
+}

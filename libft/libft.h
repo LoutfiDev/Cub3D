@@ -6,11 +6,11 @@
 /*   By: yloutfi <yloutfi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 18:20:21 by anaji             #+#    #+#             */
-/*   Updated: 2023/07/27 16:17:43 by yloutfi          ###   ########.fr       */
+/*   Updated: 2023/08/21 11:39:33 by yloutfi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#	ifndef LIBFT_H
+#ifndef LIBFT_H
 # define LIBFT_H
 
 # include <unistd.h>
@@ -71,4 +71,4 @@ void		ft_lstclear(t_list **lst, void (*del)(void*));
 void		ft_lstiter(t_list *lst, void (*f)(void *));
 t_list		*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
-#	endif
+#endif

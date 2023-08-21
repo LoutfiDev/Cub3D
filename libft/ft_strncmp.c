@@ -6,14 +6,14 @@
 /*   By: yloutfi <yloutfi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 19:35:25 by anaji             #+#    #+#             */
-/*   Updated: 2023/08/13 18:07:09 by yloutfi          ###   ########.fr       */
+/*   Updated: 2023/08/21 11:40:05 by yloutfi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
-{	
+{
 	size_t	i;
 
 	i = 0;
