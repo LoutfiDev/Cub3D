@@ -6,7 +6,7 @@
 /*   By: yloutfi <yloutfi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/21 12:45:36 by yloutfi           #+#    #+#             */
-/*   Updated: 2023/08/21 12:47:09 by yloutfi          ###   ########.fr       */
+/*   Updated: 2023/08/21 15:10:59 by yloutfi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,11 +53,11 @@ int	init_tex(t_data **data)
 		if (!tex->img)
 			return (1);
 		tex->img->img_ptr = mlx_xpm_file_to_image((*data)->mlx_ptr, tex->path,
-			&tex->width, &tex->height);
+				&tex->width, &tex->height);
 		if (!tex->img)
 			return (print_msg("=> invalid texture file\n", -1));
 		tex->img->addr = mlx_get_data_addr(tex->img->img_ptr,
-			&tex->img->bpp, &tex->img->line_len, &tex->img->endian);
+				&tex->img->bpp, &tex->img->line_len, &tex->img->endian);
 		if (!tex->img->addr)
 			return (1);
 		tmp = tmp->next;

@@ -6,7 +6,7 @@
 /*   By: yloutfi <yloutfi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/13 15:20:57 by yloutfi           #+#    #+#             */
-/*   Updated: 2023/08/21 12:47:47 by yloutfi          ###   ########.fr       */
+/*   Updated: 2023/08/21 15:10:15 by yloutfi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,4 +64,3 @@ void	fill_data(t_data **data, t_list *lines)
 	}
 	return ;
 }
-
