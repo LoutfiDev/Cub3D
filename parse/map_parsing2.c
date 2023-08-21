@@ -6,7 +6,7 @@
 /*   By: yloutfi <yloutfi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/20 11:54:16 by yloutfi           #+#    #+#             */
-/*   Updated: 2023/08/21 11:30:57 by yloutfi          ###   ########.fr       */
+/*   Updated: 2023/08/21 15:45:40 by yloutfi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ int	check_line(t_list *line)
 				return (1);
 			i++;
 		}
+		if (check_wall(buff))
+			return (1);
 		tmp = tmp->next;
 	}
 	return (0);

@@ -6,12 +6,30 @@
 /*   By: yloutfi <yloutfi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/13 15:20:57 by yloutfi           #+#    #+#             */
-/*   Updated: 2023/08/21 15:10:15 by yloutfi          ###   ########.fr       */
+/*   Updated: 2023/08/21 15:41:08 by yloutfi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../cub3d.h"
 #include "../libft/libft.h"
+
+int	check_wall(char *buff)
+{
+	int	i;
+	int	wall;
+
+	i = 0;
+	wall = 0;
+	while (buff && buff[i])
+	{
+		if (buff[i] == '1')
+			wall++;
+		i++;
+	}
+	if (wall < 2)
+		return (1);
+	return (0);
+}
 
 t_tex	*create_texture(char **array)
 {

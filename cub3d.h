@@ -6,7 +6,7 @@
 /*   By: yloutfi <yloutfi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/13 12:16:13 by yloutfi           #+#    #+#             */
-/*   Updated: 2023/08/21 12:49:02 by yloutfi          ###   ########.fr       */
+/*   Updated: 2023/08/21 15:40:38 by yloutfi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,6 +107,7 @@ int		check_player(t_list *line);
 int		check_line(t_list *line);
 int		global_free(t_data *data, int exit_code);
 int		print_msg(char *msg, int fd);
+int		check_wall(char *buff);
 
 //main functions
 void	draw(t_data *data);
