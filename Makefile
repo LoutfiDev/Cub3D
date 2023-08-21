@@ -6,7 +6,7 @@
 #    By: yloutfi <yloutfi@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/13 14:56:50 by yloutfi           #+#    #+#              #
-#    Updated: 2023/08/21 12:48:22 by yloutfi          ###   ########.fr        #
+#    Updated: 2023/08/21 15:12:18 by yloutfi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,10 +17,10 @@ DFLAGS = -Llibft -lft
 MLX = -L /nfs/homes/yloutfi/minilibx-linux -lmlx_Linux -lXext -lX11 -lm -lz
 CC = cc
 
-SRCS = main.c  draw.c events.c init.c
+SRCS = main.c  draw.c events.c init.c global_free.c
 		
 PARSE_SRC = ./parse/parse.c	./parse/map_parsing.c ./parse/map_parsing2.c \
-		./parse/param_parsing.c ./parse/utils.c ./parse/global_free.c
+		./parse/param_parsing.c ./parse/utils.c
 
 	
 OBJS = $(SRCS:.c=.o)
