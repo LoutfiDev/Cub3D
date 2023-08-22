@@ -6,7 +6,7 @@
 #    By: yloutfi <yloutfi@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/13 14:56:50 by yloutfi           #+#    #+#              #
-#    Updated: 2023/08/21 15:12:18 by yloutfi          ###   ########.fr        #
+#    Updated: 2023/08/21 17:59:26 by yloutfi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ CFLAGS = -I /nfs/homes/yloutfi/minilibx-linux -I ./libft \
 	-Wall -Wextra -Werror -fsanitize=address -g3
 DFLAGS = -Llibft -lft 
 MLX = -L /nfs/homes/yloutfi/minilibx-linux -lmlx_Linux -lXext -lX11 -lm -lz
-CC = cc
+CC = gcc-11
 
 SRCS = main.c  draw.c events.c init.c global_free.c
 		

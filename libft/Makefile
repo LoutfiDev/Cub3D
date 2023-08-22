@@ -11,7 +11,7 @@ OBJ_BONUS = ${SRC_BONUS:.c=.o}
 
 OBJ = ${SRC:.c=.o}
 
-CC = cc
+CC = gcc-11
 CFLAGS = -g -Wall -Werror -Wextra
 
 NAME =  libft.a

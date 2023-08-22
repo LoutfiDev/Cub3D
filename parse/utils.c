@@ -6,7 +6,7 @@
 /*   By: yloutfi <yloutfi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/13 15:20:57 by yloutfi           #+#    #+#             */
-/*   Updated: 2023/08/21 15:41:08 by yloutfi          ###   ########.fr       */
+/*   Updated: 2023/08/22 08:34:59 by yloutfi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ void	fill_data(t_data **data, t_list *lines)
 	while (tmp)
 	{
 		buff = (char *)tmp->content;
-		array = split(buff, ' ');
+		array = ft_split(buff, ' ');
 		if (ft_strlen(array[0]) == 2)
 			ft_lstadd_back(&(*data)->texture, ft_lstnew(create_texture(array)));
 		if (!ft_strncmp(array[0], "F", 0))

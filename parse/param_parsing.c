@@ -6,7 +6,7 @@
 /*   By: yloutfi <yloutfi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 12:08:37 by yloutfi           #+#    #+#             */
-/*   Updated: 2023/08/21 11:11:04 by yloutfi          ###   ########.fr       */
+/*   Updated: 2023/08/22 09:55:20 by yloutfi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,19 +17,25 @@ int	is_rgb(char *rgb)
 {
 	int		i;
 	int		j;
+	int		comma;
 	char	**array;
 
+	i = 0;
+	comma = 0;
+	while (rgb[i])
+		if (rgb[i++] == ',')
+			comma++;
 	array = ft_split(rgb, ',');
 	i = 0;
 	while (array[i])
 	{
 		j = 0;
 		while (array[i][j])
-			if (!ft_isdigit(array[i][j++]))
+			if (!ft_isdigit(array[i][j++]) || ft_atoi(array[i]) > 255)
 				return (ft_free_array(array, 1));
 		i++;
 	}
-	if (i != 3)
+	if (i != 3 || comma > 2)
 		return (ft_free_array(array, 1));
 	return (ft_free_array(array, 0));
 }
@@ -40,6 +46,8 @@ int	check_global(char *buff)
 	int		i;
 
 	i = 0;
+	if (buff[0] != '\0' && buff[ft_strlen(buff) - 1] == '\n')
+		buff[ft_strlen(buff) - 1] = 0;
 	array = ft_split(buff, ' ');
 	if (!array)
 		return (ft_free_array(array, 1));
@@ -47,8 +55,6 @@ int	check_global(char *buff)
 		i++;
 	if (i != 2)
 		return (ft_free_array(array, 1));
-	if (array[1][0] != '\0')
-		array[1][ft_strlen(array[1]) - 1] = 0;
 	if (ft_strncmp(array[0], "NO", 0) && ft_strncmp(array[0], "SO", 0)
 		&& ft_strncmp(array[0], "EA", 0) && ft_strncmp(array[0], "WE", 0)
 		&& ft_strncmp(array[0], "F", 0) && ft_strncmp(array[0], "C", 0))
@@ -66,7 +72,7 @@ int	is_dup(char *buff, t_list *lines)
 	char	*line;
 	char	**array;
 
-	array = split(buff, ' ');
+	array = ft_split(buff, ' ');
 	if (!array)
 		return (ft_free_array(array, 1));
 	tmp = lines;
