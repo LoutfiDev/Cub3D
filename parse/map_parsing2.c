@@ -6,7 +6,7 @@
 /*   By: yloutfi <yloutfi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/20 11:54:16 by yloutfi           #+#    #+#             */
-/*   Updated: 2023/08/22 09:51:48 by yloutfi          ###   ########.fr       */
+/*   Updated: 2023/08/23 09:51:42 by yloutfi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,8 @@ int	check_player(t_list *line)
 
 int	dfs_check(t_map *map, int x, int y)
 {
-	if (map->copy[y][x] == '1' || map->copy[y][x] == '2')
+	if ((x >= 0 && y >= 0)
+		&& (map->copy[y][x] == '1' || map->copy[y][x] == '2'))
 		return (0);
 	if (x <= 0 || y <= 0 || x >= map->width || y >= map->height
 		|| map->copy[y][x] == ' ')

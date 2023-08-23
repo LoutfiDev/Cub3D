@@ -6,7 +6,7 @@
 /*   By: yloutfi <yloutfi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 12:10:36 by yloutfi           #+#    #+#             */
-/*   Updated: 2023/08/21 15:38:38 by yloutfi          ###   ########.fr       */
+/*   Updated: 2023/08/23 09:52:25 by yloutfi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,8 +111,12 @@ int	check_map(int fd, t_data **data)
 	get_player_pos((*data)->map, &(*data)->pos);
 	if (dfs_check((*data)->map, (*data)->pos.x, (*data)->pos.y))
 		return (1);
-	if (dfs_check((*data)->map, get_pos((*data)->map, '0').x, 
-			get_pos((*data)->map, '0').y))
-		return (1);
+	while (get_pos((*data)->map, '0').x >= 0
+		&& get_pos((*data)->map, '0').y >= 0)
+	{
+		if (dfs_check((*data)->map, get_pos((*data)->map, '0').x, 
+				get_pos((*data)->map, '0').y))
+			return (1);
+	}
 	return (0);
 }
