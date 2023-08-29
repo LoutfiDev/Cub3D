@@ -6,7 +6,7 @@
 /*   By: yloutfi <yloutfi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 12:08:37 by yloutfi           #+#    #+#             */
-/*   Updated: 2023/08/22 09:55:20 by yloutfi          ###   ########.fr       */
+/*   Updated: 2023/08/29 19:52:21 by yloutfi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,6 +111,7 @@ int	check_param(int fd, t_data **data)
 			free(buff);
 			continue ;
 		}
+		buff = ft_strtrim(buff, " ");
 		if (check_global(buff) || is_dup(buff, lines))
 			return (free_param(&lines, buff));
 		ft_lstadd_back(&lines, ft_lstnew(ft_strtrim(buff, "\n")));
