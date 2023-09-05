@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   event.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anaji <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: yloutfi <yloutfi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 01:41:02 by anaji             #+#    #+#             */
-/*   Updated: 2023/09/05 02:53:39 by anaji            ###   ########.fr       */
+/*   Updated: 2023/09/05 22:26:06 by yloutfi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,6 @@ int	key_down(int key, t_mlx *mlx)
 		mlx->evt->is_side_move = 1;
 	if (key == 'a')
 		mlx->evt->is_side_move = -1;
-	update(*mlx->evt, mlx);
 	return (0);
 }
 
@@ -72,17 +71,17 @@ void	update(t_event evt, t_mlx *mlx)
 	float	tmp_x;
 	float	tmp_y;
 
-	tmp_x = mlx->player->x + evt.is_moving * (cos(mlx->player->angle) * 20);
-	tmp_y = mlx->player->y + evt.is_moving * (sin(mlx->player->angle) * 20);
+	tmp_x = mlx->player->x + evt.is_moving * (cos(mlx->player->angle) * 1);
+	tmp_y = mlx->player->y + evt.is_moving * (sin(mlx->player->angle) * 1);
 	if (is_wall(tmp_x, tmp_y, *mlx->map) == 0 && evt.is_moving)
 		update_player(&mlx->player->x, &mlx->player->y, tmp_x, tmp_y);
 	tmp_x = mlx->player->x + evt.is_side_move * (cos(mlx->player->angle
-				+ PI / 2.0) * 20);
+				+ PI / 2.0) * 1);
 	tmp_y = mlx->player->y + evt.is_side_move * (sin(mlx->player->angle
-				+ PI / 2.0) * 20);
+				+ PI / 2.0) * 1);
 	if (is_wall(tmp_x, tmp_y, *mlx->map) == 0 && evt.is_side_move)
 		update_player(&mlx->player->x, &mlx->player->y, tmp_x, tmp_y);
-	mlx->player->angle += evt.is_rotating * 5.0 * (PI / 180.0);
+	mlx->player->angle += evt.is_rotating * 1 * (PI / 180.0);
 	mlx->player->angle = normalize_ray_angle(mlx->player->angle);
 	if (evt.is_moving || evt.is_rotating || evt.is_side_move)
 		render(mlx);
