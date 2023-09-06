@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yloutfi <yloutfi@student.42.fr>            +#+  +:+       +#+        */
+/*   By: anaji <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/13 15:08:56 by yloutfi           #+#    #+#             */
-/*   Updated: 2023/09/05 11:56:47 by yloutfi          ###   ########.fr       */
+/*   Updated: 2023/09/06 03:42:09 by anaji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,8 @@ int	destroy_window(t_mlx *mlx)
 }
 int func(t_mlx *mlx)
 {
-	update(*mlx->evt, mlx);
+	if (mlx->evt->is_moving || mlx->evt->is_rotating || mlx->evt->is_side_move)
+		update(*mlx->evt, mlx);
 	return (0);
 }
 

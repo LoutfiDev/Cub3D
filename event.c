@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   event.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yloutfi <yloutfi@student.42.fr>            +#+  +:+       +#+        */
+/*   By: anaji <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 01:41:02 by anaji             #+#    #+#             */
-/*   Updated: 2023/09/05 22:26:06 by yloutfi          ###   ########.fr       */
+/*   Updated: 2023/09/06 04:27:12 by anaji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,10 +53,13 @@ int	key_up(int key, t_mlx *mlx)
 	return (0);
 }
 
-void	update_player(float *x, float *y, float old_x, float old_y)
+void	update_player(t_player *p, float x, float y, t_map map)
 {
-	*x = old_x;
-	*y = old_y;
+	if (is_wall(x, p->y, map) == 0 && is_wall(p->x, y, map) == 0)
+	{
+		p->x = x;
+		p->y = y;
+	}
 }
 
 int	re_render(t_mlx *mlx)
@@ -68,19 +71,19 @@ int	re_render(t_mlx *mlx)
 
 void	update(t_event evt, t_mlx *mlx)
 {
-	float	tmp_x;
-	float	tmp_y;
+	float	new_x;
+	float	new_y;
 
-	tmp_x = mlx->player->x + evt.is_moving * (cos(mlx->player->angle) * 1);
-	tmp_y = mlx->player->y + evt.is_moving * (sin(mlx->player->angle) * 1);
-	if (is_wall(tmp_x, tmp_y, *mlx->map) == 0 && evt.is_moving)
-		update_player(&mlx->player->x, &mlx->player->y, tmp_x, tmp_y);
-	tmp_x = mlx->player->x + evt.is_side_move * (cos(mlx->player->angle
-				+ PI / 2.0) * 1);
-	tmp_y = mlx->player->y + evt.is_side_move * (sin(mlx->player->angle
-				+ PI / 2.0) * 1);
-	if (is_wall(tmp_x, tmp_y, *mlx->map) == 0 && evt.is_side_move)
-		update_player(&mlx->player->x, &mlx->player->y, tmp_x, tmp_y);
+	new_x = mlx->player->x + evt.is_moving * (cos(mlx->player->angle) * 3);
+	new_y = mlx->player->y + evt.is_moving * (sin(mlx->player->angle) * 3);
+	if (evt.is_moving)
+		update_player(mlx->player, new_x, new_y, *mlx->map);
+	new_x = mlx->player->x + evt.is_side_move * (cos(mlx->player->angle
+				+ PI / 2.0) * 3);
+	new_y = mlx->player->y + evt.is_side_move * (sin(mlx->player->angle
+				+ PI / 2.0) * 3);
+	if (is_wall(new_x, new_y, *mlx->map) == 0 && evt.is_side_move)
+		update_player(mlx->player, new_x, new_y, *mlx->map);
 	mlx->player->angle += evt.is_rotating * 1 * (PI / 180.0);
 	mlx->player->angle = normalize_ray_angle(mlx->player->angle);
 	if (evt.is_moving || evt.is_rotating || evt.is_side_move)

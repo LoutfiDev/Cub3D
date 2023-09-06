@@ -6,7 +6,7 @@
 /*   By: anaji <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 02:20:01 by anaji             #+#    #+#             */
-/*   Updated: 2023/09/05 03:00:48 by anaji            ###   ########.fr       */
+/*   Updated: 2023/09/06 04:41:39 by anaji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,13 +46,11 @@ t_draw	fill_wall_data(int x, int y, int hieght, t_draw wall)
 {
 	wall.x = x;
 	wall.y = y;
+	if (y < 0)
+		y = 0;
 	wall.width = 1;
 	wall.hieght = hieght;
-	wall.wall_hieght = hieght - abs(y);
-	if (wall.wall_hieght > HEIGHT || wall.wall_hieght < HEIGHT)
-		wall.wall_hieght = HEIGHT;
-	if (wall.wall_hieght <= 0)
-		wall.wall_hieght = hieght + abs(y);
+	wall.wall_hieght = HEIGHT;
 	return (wall);
 }
 
