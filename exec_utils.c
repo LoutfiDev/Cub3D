@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   exec_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anaji <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: yloutfi <yloutfi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/18 02:24:08 by anaji             #+#    #+#             */
-/*   Updated: 2023/09/02 23:35:32 by anaji            ###   ########.fr       */
+/*   Updated: 2023/09/07 19:48:24 by yloutfi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,9 @@
 void	player_pos(t_player *p)
 {
 	p->x *= TALE_SIZE;
+	p->x += TALE_SIZE / 2;
 	p->y *= TALE_SIZE;
+	p->y += TALE_SIZE / 2;
 }
 
 float	get_player_angle(char c)
