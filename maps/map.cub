@@ -6,7 +6,7 @@ WE ./assets/wall6.xpm
 
 EA ./assets/wall7.xpm
 
-F 0,100,0
+F 0  ,100,0
 
 C 25,30,0
 

@@ -6,7 +6,7 @@
 /*   By: anaji <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 23:28:35 by anaji             #+#    #+#             */
-/*   Updated: 2023/09/06 04:41:50 by anaji            ###   ########.fr       */
+/*   Updated: 2023/09/08 01:32:57 by anaji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,14 +31,14 @@ void	draw_wall(t_draw wall, t_data *img, t_ray ray, t_list *lst)
 	int		i;
 	float	distortion;
 
-	i = 0;
+	i = wall.y;
 	tex = get_tex(lst, ray.direction);
 	x_offset = (int)(ray.x_hit + ray.y_hit) % TALE_SIZE;
-	while (i < wall.wall_hieght)
+	while (i <= wall.wall_hieght + wall.y)
 	{
-		distortion = i + (wall.hieght / 2.0) - HEIGHT / 2.0;
+		distortion = i - (HEIGHT - wall.hieght) / 2.0;
 		y_offset = distortion * (float)tex->height / wall.hieght;
-		my_mlx_pixel_put(img, wall.x, i, 
+		my_mlx_pixel_put(img, wall.x, i,
 			get_pixel(tex->img, x_offset, y_offset, tex));
 		i++;
 	}
@@ -47,25 +47,19 @@ void	draw_wall(t_draw wall, t_data *img, t_ray ray, t_list *lst)
 void	draw_celling(t_data *data, int x, int h, int color)
 {
 	int	j;
-	int	i;
 
-	i = 0;
 	j = 0;
 	while (j < h)
 	{
 		my_mlx_pixel_put(data, x, j, color);
 		j++;
 	}
-	i++;
 }
 
 void	draw_floor(t_data *data, int x, int y, int color)
 {
-	int		i;
-	int		j;
+	int	j;
 
-	i = 0;
-	j = 0;
 	j = 0;
 	while (j < HEIGHT)
 	{

@@ -6,7 +6,7 @@
 /*   By: anaji <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 01:36:38 by anaji             #+#    #+#             */
-/*   Updated: 2023/09/04 23:50:08 by anaji            ###   ########.fr       */
+/*   Updated: 2023/09/08 01:02:07 by anaji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ t_mlx			*ft_init(void);
 
 int				key_up(int key, t_mlx *mlx);
 int				key_down(int key, t_mlx *mlx);
-void			update(t_event evt, t_mlx *mlx);
+int				update(t_mlx *mlx);
 void			event_handler(void *mlx, void *win);
 void			draw_wall(t_draw wall, t_data *img, t_ray ray, t_list *lst);
 void			draw_celling(t_data *data, int x, int h, int color);
